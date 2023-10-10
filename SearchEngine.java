@@ -14,7 +14,8 @@ class StringServer implements URLHandler {
         if (url.getPath().equals("/")) {
             return String.format("Number of Strings: %d", numberOfStrings);
             } 
-        else (url.getPath().contains("/add")) {
+        else { 
+            (url.getPath().contains("/add")) 
             String[] parameters = url.getQuery().split("=");
             if ((parameters[0]).equals("s")); {
                 listOfStrings.add(parameters[1]);
