@@ -2,7 +2,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
 
-class StringServer implements URLHandler {
+class Handler implements URLHandler {
 
     String strs = "";
 
@@ -35,6 +35,6 @@ class SearchEngine {
         }
         int port = Integer.parseInt(args[0]);
         
-        Server.start(port, new StringServer());
+        Server.start(port, new Handler());
     }
 }
