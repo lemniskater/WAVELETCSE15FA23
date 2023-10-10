@@ -15,11 +15,12 @@ class StringServer implements URLHandler {
             return String.format("Number of Strings: %d", numberOfStrings);
             } 
         else { 
-            (url.getPath().contains("/add"));
+            if (url.getPath().contains("/add")); {
             String[] parameters = url.getQuery().split("=");
-            if ((parameters[0]).equals("s")); {
-                listOfStrings.add(parameters[1]);
-                return String.format("List of strings increased, it is now: " + listOfStrings.size());
+                if ((parameters[0]).equals("s")); {
+                    listOfStrings.add(parameters[1]);
+                    return String.format("List of strings increased, it is now: " + listOfStrings.size());
+                }
             }
             return "404 Not Found!"; 
         }
