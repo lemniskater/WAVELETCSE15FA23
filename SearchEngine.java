@@ -15,7 +15,7 @@ class Handler implements URLHandler {
             return String.format("Number of Strings: %d", numberOfStrings);
             } 
         else { 
-            if (url.getPath().contains("/add")); {
+            if (url.getPath().contains("/add")) {
                 String[] parameters = url.getQuery().split("=");
                     if (parameters[0].equals("s")); {
                         listOfStrings.add(parameters[1]);
