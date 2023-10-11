@@ -22,9 +22,10 @@ class Handler implements URLHandler {
                         return String.format("List of strings increased, it is now: " + listOfStrings.size());
                     }
                 } 
+                return "404 Not Found!";
             }
         }
-}
+    }
 
 class SearchEngine {
     public static void main(String[] args) throws IOException {
