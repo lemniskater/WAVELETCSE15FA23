@@ -12,8 +12,11 @@ class Handler implements URLHandler {
 
     public String handleRequest(URI url) {
         if (url.getPath().equals("/")) {
-            return String.format("Number of Strings: %d", numberOfStrings);
+            return String.format("Number of Strings: %d", listOfStrings.size());
             } 
+        else if (url.getPath().equals("/list")) {
+            return String.format("List of strings: " + listOfStrings.toString());
+        }
         else { 
             if (url.getPath().contains("/add")) {
                 String[] parameters = url.getQuery().split("=");
