@@ -20,11 +20,14 @@ class Handler implements URLHandler {
         else if (url.getPath().equals("/search")) {
             String[] parameters = url.getQuery().split("=");
             ArrayList<String> searchedStrings = new ArrayList<String>();
+            if(parameters[0].equals("s")) {
                 for (String s: listOfStrings) {
-                    if( s.contains(parameters[1]) )
+                    if( s.contains(parameters[1]) ) {
                         searchedStrings.add(s);
                     }
                 return String.format(searchedStrings.toString());
+                }
+            }
         }
         else { 
             if (url.getPath().contains("/add")) {
@@ -34,8 +37,8 @@ class Handler implements URLHandler {
                         return String.format("List of strings increased, it is now: " + listOfStrings.size());
                     }
                 } 
-                return "404 Not Found!";
             }
+            return "404 Not Found!";
         }
     }
 
