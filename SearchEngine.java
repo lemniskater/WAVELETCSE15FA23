@@ -17,6 +17,15 @@ class Handler implements URLHandler {
         else if (url.getPath().equals("/list")) {
             return String.format("List of strings: " + listOfStrings.toString());
         }
+        else if (url.getPath().equals("/search")) {
+            String[] parameters = url.getQuery().split("=");
+            ArrayList<String> searchedStrings = new ArrayList<String>();
+                for (String s: listOfStrings) {
+                    if( s.contains(parameters[1]) )
+                        searchedStrings.add(s);
+                    }
+                return String.format(searchedStrings.toString());
+        }
         else { 
             if (url.getPath().contains("/add")) {
                 String[] parameters = url.getQuery().split("=");
