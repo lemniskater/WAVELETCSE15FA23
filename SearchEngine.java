@@ -24,6 +24,7 @@ class Handler implements URLHandler {
                 for (String s: listOfStrings) {
                     if( s.contains(parameters[1]) ) {
                         searchedStrings.add(s);
+                        return String.format(searchedStrings.get(searchedStrings.indexOf(s)));
                     }
                 return String.format(searchedStrings.toString());
                 }
