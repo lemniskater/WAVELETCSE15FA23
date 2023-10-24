@@ -16,8 +16,6 @@ class Handler implements URLHandler {
 
     int stringCount = 1;
 
-    String end = "";
-
     public String handleRequest(URI url) {
         if (url.getPath().equals("/")) {
             return String.format("Number of Strings: %d", listOfStrings.size());
@@ -62,7 +60,3 @@ class StringServer {
         Server.start(port, new Handler());
     }
 }
-
-/*public class addHelper {
-    
-}*/
